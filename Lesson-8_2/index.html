@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<title>Qulix</title>
+		<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/mobile-menu.css">
+		<link rel="stylesheet" href="css/custom-select.css">
+		<link rel="stylesheet" href="css/media.css">
+		<script defer src="js/custom-select.js"></script>
+		<script defer src="js/main.js"></script>
+
+	</head>
+	<body>
+		<div id="header">
+
+			<div class="header-container">
+				<a href="#"><img class="main-logo" src="images/logo.png" alt=""></a>
+
+				<div class="user-data">
+					<div class="select" id="select-1">
+						<button type="button" class="select__toggle" name="city" value="New York" data-select="toggle" data-index="1"><span>New York</span></button>
+						<div class="select__dropdown">
+							<ul class="select__options">
+								<li class="select__option" data-select="option" data-value="Berlin" data-index="2"><span>Berlin</span></li>
+								<li class="select__option" data-select="option" data-value="London" data-index="3"><span>London</span></li>
+								<li class="select__option" data-select="option" data-value="Minsk" data-index="0"><span>Minsk</span></li>
+								<li class="select__option select__option_selected" data-select="option" data-value="New York" data-index="1"><span>New York</span></li>
+							</ul>
+						</div>
+					</div>
+
+					<a href="#"><i class="fa fa-bell fa-lg"></i></a>
+					<a href="#"><i class="fa fa-envelope fa-lg"></i></a>
+					<a href="#">User name</a>
+					<a href="#"><img src="images/userPhotoBig.jpg" alt=""></a>
+					<button class="search" type="submit"><i class="fa fa-search fa-lg"></i></button>
+				</div>
+			</div>
+
+			<div class="main-menu">
+				<div class="header-container">
+					<a href="#">Menu item</a>
+					<a href="#">Menu item</a>
+					<a href="#">Menu item</a>
+					<a href="#">Menu item</a>
+					<a href="#">Menu item</a>
+				</div>
+			</div>
+
+			<div id="header-mobile">
+				<div class="hamburger-menu" id="burger">
+					<input id="menu__toggle" type="checkbox" />
+					<label class="menu__btn" for="menu__toggle">
+						<span></span>
+					</label>
+					<ul class="menu__box">
+						<li><a class="menu__item" href="#">Menu item</a></li>
+						<li><a class="menu__item" href="#">Menu item</a></li>
+						<li><a class="menu__item" href="#">Menu item</a></li>
+						<li><a class="menu__item" href="#">Menu item</a></li>
+						<li><a class="menu__item" href="#">Menu item</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="container">
+
+			<div id="left">
+				<div class="vertical-menu">
+					<a href="#">Submenu item 7d</a>
+					<a href="#">Submenu item 5d</a>
+				</div>
+				<div class="vertical-menu">
+					<h3 class="menu_title">Submenu</h3>
+					<a href="#">Submenu item 7d</a>
+					<a href="#">Submenu item 2d</a>
+					<a href="#">Submenu item 4d</a>
+					<a href="#" class="more">More tags</a>
+				</div>
+				<div class="vertical-menu">
+					<h3 class="menu_title">Submenu</h3>
+					<a href="#">Submenu item 1d</a>
+					<a href="#">Submenu item 1d</a>
+				</div>
+				<div class="vertical-menu">
+					<h3 class="menu_title">Submenu</h3>
+					<a href="#">Submenu item 4d</a>
+					<a href="#">Submenu item 2d</a>
+					<a href="#">Submenu item1 & Submenu item2 2d</a>
+					<a href="#">Submenu item 7d</a>
+					<a href="#">Submenu item 1d</a>
+					<a href="#">Submenu item 1d</a>
+				</div>
+				<div class="vertical-menu">
+					<h3 class="menu_title">Submenu</h3>
+					<a href="#">Submenu item 2d</a>
+					<a href="#">Submenu item 1d</a>
+					<a href="#">Submenu item 3d</a>
+				</div>
+			</div>
+
+			<div id="right">
+
+				<div id="content">
+					<div class="page-title">
+						<h1>Page title in </h1>
+
+						<div class="select" id="select-2">
+							<button type="button" class="select__toggle" name="city" value="New York" data-select="toggle" data-index="1"><span>New York</span></button>
+							<div class="select__dropdown">
+								<ul class="select__options">
+									<li class="select__option" data-select="option" data-value="Berlin" data-index="2"><span>Berlin</span></li>
+									<li class="select__option" data-select="option" data-value="London" data-index="3"><span>London</span></li>
+									<li class="select__option" data-select="option" data-value="Minsk" data-index="0"><span>Minsk</span></li>
+									<li class="select__option select__option_selected" data-select="option" data-value="New York" data-index="1"><span>New York</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="theme">
+						<form>
+							<label><input type="text" placeholder="Search ..."></label>
+							<button type="submit"><i class="fa fa-search fa-lg"></i></button>
+						</form>
+						<div class="new-item">
+							<a href="#">+<span> New item</span></a>
+							<a href="#"><i class="fa fa-sliders"></i></a>
+						</div>
+					</div>
+
+					<div class="post">
+						<a href="#"><img class="user-photo" src="images/photo1.jpg" alt=""></a>
+						<div class="message">
+							<a href="#" class="user-name">User name</a>
+							<span class="member">Pro</span>
+							<div class="comments">
+								<span><i class="fa fa-comments"></i>&nbsp;2</span>
+								<span><i class="fa fa-clock-o"></i>&nbsp;20m</span>
+							</div>
+							<h2><a href="#">Item title&nbsp;1</a></h2>
+							<p class="publication">Suspendisse potenti. Duis imperdiet ex non leo condimentum efficitur. Sed rhoncus eleifend lacus sit amet faucibus. Nunc semper nisl a dolor pretium dapibus quis quis lacus. Nulla faucibus viverra laoreet. Fusce in scelerisque magna. Duis porta erat vitae lectus lacinia tempus.</p>
+							<p class="hashtags"><i class="fa fa-tag"></i><a href="#"> tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a></p>
+						</div>
+					</div>
+
+					<div class="post">
+						<a href="#"><img class="user-photo" src="images/photo2.jpg" alt=""></a>
+						<div class="message">
+							<a href="#" class="user-name">User name</a>
+							<span class="member">Member</span>
+							<div class="comments">
+								<span><i class="fa fa-comments"></i>&nbsp;2</span>
+								<span><i class="fa fa-clock-o"></i>&nbsp;20m</span>
+							</div>
+							<h2><a href="#">Item title&nbsp;2</a></h2>
+							<p class="publication">Suspendisse potenti. Duis imperdiet ex non leo condimentum efficitur. Sed rhoncus eleifend lacus sit amet faucibus. Nunc semper nisl a dolor pretium dapibus quis quis lacus. Nulla faucibus viverra laoreet. Fusce in scelerisque magna. Duis porta erat vitae lectus lacinia tempus.</p>
+							<p class="hashtags"><i class="fa fa-tag"></i><a href="#"> tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a></p>
+						</div>
+					</div>
+
+					<div class="post">
+						<a href="#"><img class="user-photo" src="images/photo3.jpg" alt=""></a>
+						<div class="message">
+							<a href="#" class="user-name">User name</a>
+							<span class="member">Member</span>
+							<div class="comments">
+								<span><i class="fa fa-comments"></i>&nbsp;2</span>
+								<span><i class="fa fa-clock-o"></i>&nbsp;20m</span>
+							</div>
+							<h2><a href="#">Item title&nbsp;3</a></h2>
+							<p class="publication">Suspendisse potenti. Duis imperdiet ex non leo condimentum efficitur. Sed rhoncus eleifend lacus sit amet faucibus. Nunc semper nisl a dolor pretium dapibus quis quis lacus. Nulla faucibus viverra laoreet. Fusce in scelerisque magna. Duis porta erat vitae lectus lacinia tempus.</p>
+							<p class="hashtags"><i class="fa fa-tag"></i><a href="#"> tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a></p>
+						</div>
+					</div>
+
+					<div class="post">
+						<a href="#"><img class="user-photo" src="images/photo4.jpg" alt=""></a>
+						<div class="message">
+							<a href="#" class="user-name">User name</a>
+							<span class="member">Member</span>
+							<div class="comments">
+								<span><i class="fa fa-comments"></i>&nbsp;2</span>
+								<span><i class="fa fa-clock-o"></i>&nbsp;20m</span>
+							</div>
+							<h2><a href="#">Item title&nbsp;4</a></h2>
+							<p class="publication">Suspendisse potenti. Duis imperdiet ex non leo condimentum efficitur. Sed rhoncus eleifend lacus sit amet faucibus. Nunc semper nisl a dolor pretium dapibus quis quis lacus. Nulla faucibus viverra laoreet. Fusce in scelerisque magna. Duis porta erat vitae lectus lacinia tempus.</p>
+							<p class="hashtags"><i class="fa fa-tag"></i><a href="#"> tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a></p>
+						</div>
+					</div>
+
+					<div class="navigation">
+						<a href="#" class="previous">&#8249;&nbsp;&nbsp;&nbsp;Previous</a>
+						<a href="#" class="next">Next&nbsp;&nbsp;&nbsp;&#8250;</a>
+					</div>
+				</div>
+
+				<div id="footer">
+					<div class="duplicate-menu">
+						<a href="#">About</a>
+						<a href="#">Policies</a>
+						<a href="#">Site map</a>
+						<a href="#">Help</a>
+						<a href="#">Contact us</a>
+					</div>
+
+					<div class="copyright">
+						<a href="#"><img src="images/logo-min.png" alt=""></a>
+						<span>&copy; 2015. Qulix Systems. All rights reserved.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

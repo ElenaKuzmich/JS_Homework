@@ -1,0 +1,173 @@
+@media screen and (max-width: 500px) {
+    #header-mobile { /* блок с мобильным меню */
+        display: block;
+    }
+    div#header-mobile {
+        height: 0;
+    }
+    #header .select {
+        display: none;
+    }
+    .main-logo {
+        /*float: left;*/
+        width: 60px;
+        height: 35px;
+        margin: 23px 0 0 105px;
+    }
+    .user-data a i {
+        display: none;
+    }
+    div.user-data {
+        margin-top: 15px;
+    }
+    .user-data img {
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+    }
+    .user-data a {
+        font-size: 12pt;
+        font-weight: 500;
+        color: #99a1b3;
+        margin-left: 4px;
+    }
+    .user-data a:hover {
+        color: #f2f4f8;
+    }
+
+    #header .search {
+        display: none;
+    }
+    .main-menu {
+        display: none;
+    }
+
+    #left {
+        display: none;
+    }
+
+    #right {
+        margin-left: 0;
+    }
+    .post {
+        margin: 30px 10px 0 15px;
+    }
+    .post .member {
+        margin-left: 10px;
+        font-size: 11pt;
+    }
+    .comments span, .comments span i {
+        font-size: 15px;
+    }
+    .post h2 a{
+        font-size: 16pt;
+    }
+    .message p {
+        font-size: 13.5pt;
+    }
+    p.hashtags i, p.hashtags a {
+        font-size: 11pt;
+    }
+    .duplicate-menu a {
+        font-size: 11pt;
+        margin-right: 10px;
+    }
+    .copyright {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .message .user-name {
+        font-size: 12pt;
+    }
+    .message .member {
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+
+    #content h1 {
+        margin-bottom: 5px;
+        font-size: 22pt;
+    }
+    .select {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 535px) {
+    .duplicate-menu {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #content .select__toggle span {
+        font-size: 22pt;
+    }
+    #content .select {
+        width: 165px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    #content .page-title {
+        text-align: center;
+    }
+    #content h1 {
+        margin-left: 0;
+        font-size: 22pt;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 595px) {
+    .post .comments {
+        float: none;
+        margin: 5px 0 5px -3px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .theme {
+        padding: 5px 0 5px 15px;
+    }
+    .new-item {
+        margin-top: -5px;
+    }
+    .theme .new-item a {
+        font-size: 30pt;
+        font-weight: 800;
+        margin-right: 20px;
+        margin-left: 0;
+    }
+    .theme .new-item i {
+        font-size: 24pt;
+        margin-right: 0;
+        margin-left: 5px;
+    }
+    .new-item a span {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .new-item a, .new-item i {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .theme form {
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .main-menu .header-container {
+        padding-left: 5px;
+    }
+}
+
