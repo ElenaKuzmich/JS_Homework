@@ -1,0 +1,26 @@
+* {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    width: 200px;
+    height: 40px;
+    padding-left: 25px;
+}
+
+.add {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
