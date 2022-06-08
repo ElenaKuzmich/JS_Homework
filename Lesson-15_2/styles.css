@@ -1,0 +1,85 @@
+* {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.page-content {
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+.page-content button {
+    float: right;
+    background-color: green;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.info-block {
+    background-color: white;
+    border-radius: 0 10px 10px 10px;
+}
+
+.info-block div {
+    display: inline-block;
+    margin: 62px 0 61px 0;
+}
+
+.info-block img {
+    display: inline-block;
+    float: left;
+    width: 125px;
+    height: 125px;
+    margin: 20px;
+}
+
+.info-block p {
+    margin: 5px 0 0 0;
+    font-size: 11pt;
+    font-style: italic;
+}
+
+.users-tabs a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: green;
+    border-radius: 7px 7px 0 0;
+    text-align: center;
+    color: white;
+    padding: 8px 25px;
+    font-size: 10pt;
+    margin-right: 10px;
+}
+
+.users-tabs a:hover {
+    background-color: white;
+    color: black;
+}
+
+.users-tabs .active {
+    background-color: white;
+    color: black;
+}
+
+.error {
+    width: 500px;
+    height: 100px;
+    text-align: center;
+    margin: 50px auto 0;
+    padding: 15px 20px;
+    background-color: darkgray;
+    border-radius: 7px;
+}
+
+.error h2 {
+    color: #723737;
+}
+
+.error p {
+    font-size: 13px;
+    font-weight: bold;
+}
