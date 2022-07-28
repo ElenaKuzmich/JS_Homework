@@ -1,0 +1,163 @@
+@beige: #fcf4e6;
+@brown: #3d3227;
+@green: #345c43;
+@orange: #c8945b;
+@darkred: #732525;
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &__container {
+    position: relative;
+    width: 440px;
+    margin: 250px auto 0;
+    overflow: auto;
+    background-color: @beige;
+
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 15px;
+      display: inline-block;
+      border: none;
+      border-radius: 7px;
+      background-color: #cdbfb0;
+      color: black;
+
+      &:focus {
+        color: @brown;
+        background-color: #d4dede;
+        outline: none;
+      }
+    }
+
+    label {
+      display: inline-block;
+      margin: 25px 0 5px;
+    }
+  }
+
+  &__title {
+    padding: 20px 15px;
+    background-color: @orange;
+  }
+
+  &__tab-join,
+  &__tab-login {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 67px;
+    border-bottom: 3px solid @beige;
+    color: @brown;
+    font-weight: bold;
+    font-size: 18px;
+
+    &:hover {
+      color: @green;
+      background-color: #f1eadd;
+      border-bottom: 3px solid @green;
+    }
+  }
+
+  .active-tab {
+    color: @green;
+    border-bottom: 3px solid @green;
+  }
+
+  &__registration,
+  &__authentication {
+    display: none;
+    text-align: left;
+    padding: 0 40px 30px;
+
+    span {
+      display: inline-block;
+      margin: 16px 0 10px;
+      font-size: 14px;
+    }
+  }
+
+  .active {
+    display: block;
+  }
+
+  &__btn-login-submit,
+  &__btn-join-submit,
+  &__btn-login-cancel,
+  &__btn-join-cancel {
+    color: @beige;
+    padding: 14px 20px;
+    font-size: 16px;
+    display: block;
+    margin: 15px auto 5px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 330px;
+    opacity: 0.9;
+
+    &:hover {
+      opacity:1;
+    }
+  }
+
+  &__btn-login-submit,
+  &__btn-join-submit {
+    background-color: @green;
+    margin-top: 25px;
+  }
+
+  &__btn-login-cancel,
+  &__btn-join-cancel {
+    background-color: @darkred;
+  }
+
+  &__forgot-password {
+    a {
+      color: @green;
+      font-weight: bold;
+    }
+  }
+  &__close {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: @brown;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+
+    &:hover {
+      color: @beige;
+    }
+  }
+
+  &__error {
+    color: @darkred;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+}
+
+.animate {
+  -webkit-animation: animate-zoom 0.9s;
+  animation: animate-zoom 0.9s
+}
+
+@-webkit-keyframes animate-zoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animate-zoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}

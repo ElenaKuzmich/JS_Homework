@@ -1,0 +1,36 @@
+<header class="header">
+
+    <div class="header__wrapper {{#ifCond user.error '!==' ''}}hidden{{/ifCond}}">
+        <div class="header__logo-container">
+            <a href="">
+                <img class="header__logo" src="../../images/logos/logo-header.png" alt="">
+            </a>
+        </div>
+
+        <nav class="header__tabs">
+            <a class="header__link {{#ifCond page '===' ''}}active{{/ifCond}}" href="#/">
+                About
+            </a>
+            <a class="header__link {{#ifCond page '===' 'plants'}}active{{/ifCond}}" href="#/plants">
+                Plants List
+            </a>
+        </nav>
+
+        <div class="header__user">
+            <div class="header__active-user">
+                <p class="header__login" data-id="{{user.id}}">
+                    {{user.username}}
+                </p>
+            <a class="header__plants" href="#/plants">
+                {{#ifCond page '===' 'plants'}}{{/ifCond}}
+                {{#ifCond page '!==' 'plants'}}
+                        {{plants.length}} {{#ifCond plants.length '===' '1'}}plant{{/ifCond}}{{#ifCond plants.length '!==' '1'}}plants{{/ifCond}}
+                {{/ifCond}}
+            </a>
+            </div>
+            <a class="header__logout" href="" data-id="{{user.id}}">
+                Log out
+            </a>
+        </div>
+    </div>
+</header>

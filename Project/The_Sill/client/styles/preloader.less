@@ -1,0 +1,32 @@
+@beige: #fcf4e6;
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: @beige;
+  z-index: 1001;
+
+  &__image {
+    position: relative;
+    top: 30%;
+    left: 50%;
+    width: 200px;
+    height: 321px;
+    margin-top: -160.5px;
+    margin-left: -100px;
+    background: url('../images/preloaders/preloader.gif') no-repeat 10% 50%;
+  }
+}
+
+.loaded-hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}

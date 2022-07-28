@@ -1,0 +1,215 @@
+<h1 class="page-title">Plant Edit</h1>
+
+<div class="plant-edit">
+    <div class="plant-edit__common">
+        <div class="plant-edit__photos">
+            <img class="plant-edit__photo" src="../../../images/instances/{{plant.photoTitle}}" title="{{plant.commonName}}" alt="{{plant.commonName}}">
+            <div class="plant-edit__gallery">
+                <img class="plant-edit__photo-item {{#ifCond plant.photoTitle '===' instance.photoTitle1}}active{{/ifCond}}" src="../../../images/instances/{{instance.photoTitle1}}" alt="">
+                <img class="plant-edit__photo-item {{#ifCond plant.photoTitle '===' instance.photoTitle2}}active{{/ifCond}}" src="../../../images/instances/{{instance.photoTitle2}}" alt="">
+                <img class="plant-edit__photo-item {{#ifCond plant.photoTitle '===' instance.photoTitle3}}active{{/ifCond}}" src="../../../images/instances/{{instance.photoTitle3}}" alt="">
+                <img class="plant-edit__photo-item {{#ifCond plant.photoTitle '===' instance.photoTitle4}}active{{/ifCond}}" src="../../../images/instances/{{instance.photoTitle4}}" alt="">
+            </div>
+        </div>
+
+        <div class="plant-edit__names">
+            <p>
+                <b>{{plant.commonName}} </b><span>(Common Name)</span>
+            </p>
+            <p>
+                <b>{{plant.botanicalName}} </b><span>(Botanical Name)</span>
+            </p>
+            <p>
+                <b>Plant Name:</b><br>
+                <input class="plant-edit__name" type="text" value="{{plant.name}}">
+            </p>
+            <p>
+                <b>Plant Description:</b><br>
+                <textarea class="plant-edit__description">{{plant.description}}</textarea>
+            </p>
+            <div class="plant-edit__buttons">
+                <button class="plant-edit__btn-save button" disabled>Save</button>
+                <a class="plant-edit__btn-info button" href="#/plant/{{plant.id}}">Info</a>
+                <a class="plant-edit__btn-plants-list button" href="#/plants">Plants List</a>
+                <p class="plant-edit__saved hidden">Photo, name and description changes <br>successfully saved</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="plant-edit__reminders">
+        <div class="plant-edit__watering">
+            <div class="plant-edit__watering-set">
+
+                <i class="icon icon-oil-can"></i>
+                <p>Watering reminder</p>
+
+                <span {{#ifCond plant.checkWateringReminder '===' 'true'}}class="done"{{/ifCond}}>
+                    {{#ifCond plant.checkWateringReminder '===' 'true'}}Reminder is set{{/ifCond}}
+                    {{#ifCond plant.checkWateringReminder '===' 'false'}}Reminder is not set{{/ifCond}}
+                </span>
+            </div>
+
+            <p class="plant-edit__short-info">
+                {{instance.wateringInfo}}
+            </p>
+            <p>Given watering interval
+                {{#ifCond currentDate.season '===' 'winter'}}<b>in winter </b>{{#ifCond instance.winterWatering '===' '1'}}is {{/ifCond}}{{#ifCond instance.winterWatering '!==' '1'}}are {{/ifCond}}<b>{{instance.winterWatering}} {{#ifCond instance.winterWatering '===' '1'}}day{{/ifCond}}{{#ifCond instance.winterWatering '!==' '1'}}days{{/ifCond}}{{/ifCond}}</b>
+                {{#ifCond currentDate.season '===' 'spring'}}<b>in spring </b>{{#ifCond instance.springWatering '===' '1'}}is {{/ifCond}}{{#ifCond instance.springWatering '!==' '1'}}are {{/ifCond}}<b>{{instance.springWatering}} {{#ifCond instance.springWatering '===' '1'}}day{{/ifCond}}{{#ifCond instance.springWatering '!==' '1'}}days{{/ifCond}}{{/ifCond}}</b>
+                {{#ifCond currentDate.season '===' 'summer'}}<b>in summer </b>{{#ifCond instance.summerWatering '===' '1'}}is {{/ifCond}}{{#ifCond instance.summerWatering '!==' '1'}}are {{/ifCond}}<b>{{instance.summerWatering}} {{#ifCond instance.summerWatering '===' '1'}}day{{/ifCond}}{{#ifCond instance.summerWatering '!==' '1'}}days{{/ifCond}}{{/ifCond}}</b>
+                {{#ifCond currentDate.season '===' 'autumn'}}<b>in autumn </b>{{#ifCond instance.autumnWatering '===' '1'}}is {{/ifCond}}{{#ifCond instance.autumnWatering '!==' '1'}}are {{/ifCond}}<b>{{instance.autumnWatering}} {{#ifCond instance.autumnWatering '===' '1'}}day{{/ifCond}}{{#ifCond instance.autumnWatering '!==' '1'}}days{{/ifCond}}{{/ifCond}}</b>
+            </p>
+            <p class="plant-edit__last-date">
+                {{#ifCond plant.checkWateringReminder '===' 'true'}}
+                    {{#ifCond plant.wateringLastDate '!==' ''}}
+                        The set watering last date: <b>{{plant.wateringLastDate}}</b>
+                    {{/ifCond}}
+                {{/ifCond}}
+            </p>
+
+            <p class="plant-edit__interval">
+                {{#ifCond plant.checkWateringReminder '===' 'true'}}
+                    {{#ifCond plant.wateringRange '!==' ''}}
+                        The set watering interval {{#ifCond plant.wateringRange '===' '1'}}is {{/ifCond}}{{#ifCond plant.wateringRange '!==' '1'}}are {{/ifCond}}<b>{{plant.wateringRange}} {{#ifCond plant.wateringRange '===' '1'}}day {{/ifCond}}{{#ifCond plant.wateringRange '!==' '1'}}days {{/ifCond}}</b>
+                    {{/ifCond}}
+                {{/ifCond}}
+            </p>
+
+            <div class="plant-edit__watering-container{{#ifCond plant.checkWateringReminder '===' 'false'}} hidden{{/ifCond}}">
+                <div class="plant-edit__watering-userdata">
+                    <div>
+                        <p>Set the watering last date</p>
+                        <input class="date" type="date" name="wateringLastDate" value="" >
+                    </div>
+                    <div>
+                        <p>Set the watering interval (in days)</p>
+                        <input class="range" type="text" name="wateringRange" value="">
+                       </div>
+                </div>
+
+                <div>
+                    <label><input class="radio" type="radio" name="reminder" {{#ifCond plant.checkWateringReminder '===' 'true'}}disabled{{/ifCond}}>Set the reminder</label>
+                    <label><input class="radio" type="radio" name="reminder" {{#ifCond plant.checkWateringReminder '===' 'false'}}disabled{{/ifCond}}>Remove the reminder</label>
+                </div>
+                <div>
+                    <span class="plant-edit__watering-saved hidden">Watering settings successfully saved</span>
+                    <button class="plant-edit__watering-btn-save button" disabled>Save</button>
+                </div>
+           </div>
+        </div>
+
+        <div class="plant-edit__spraying">
+            <div class="plant-edit__spraying-set">
+                <i class="icon icon-shower"></i>
+                <p>Spraying reminder</p>
+
+                <span {{#ifCond plant.checkSprayingReminder '===' 'true'}}class="done"{{/ifCond}}>
+                    {{#ifCond plant.checkSprayingReminder '===' 'true'}}Reminder is set{{/ifCond}}
+                    {{#ifCond plant.checkSprayingReminder '===' 'false'}}Reminder is not set{{/ifCond}}
+                </span>
+            </div>
+
+            <p class="plant-edit__short-info">
+                {{instance.humidityInfo}}
+            </p>
+            <p>Given spraying interval
+                {{#ifCond currentDate.season '===' 'winter'}}<b>in winter </b>{{#ifCond instance.winterSpraying '===' '1'}}is {{/ifCond}}{{#ifCond instance.winterSpraying '!==' '1'}}are {{/ifCond}}<b>{{instance.winterSpraying}} {{#ifCond instance.winterSpraying '===' '1'}}day{{/ifCond}}{{#ifCond instance.winterSpraying '!==' '1'}}days{{/ifCond}}{{/ifCond}}</b>
+                {{#ifCond currentDate.season '===' 'spring'}}<b>in spring </b>{{#ifCond instance.springSpraying '===' '1'}}is {{/ifCond}}{{#ifCond instance.springSpraying '!==' '1'}}are {{/ifCond}}<b>{{instance.springSpraying}} {{#ifCond instance.springSpraying '===' '1'}}day{{/ifCond}}{{#ifCond instance.springSpraying '!==' '1'}}days{{/ifCond}}{{/ifCond}}</b>
+                {{#ifCond currentDate.season '===' 'summer'}}<b>in summer </b>{{#ifCond instance.summerSpraying '===' '1'}}is {{/ifCond}}{{#ifCond instance.summerSpraying '!==' '1'}}are {{/ifCond}}<b>{{instance.summerSpraying}} {{#ifCond instance.summerSpraying '===' '1'}}day{{/ifCond}}{{#ifCond instance.summerSpraying '!==' '1'}}days{{/ifCond}}{{/ifCond}}</b>
+                {{#ifCond currentDate.season '===' 'autumn'}}<b>in autumn </b>{{#ifCond instance.autumnSpraying '===' '1'}}is {{/ifCond}}{{#ifCond instance.autumnSpraying '!==' '1'}}are {{/ifCond}}<b>{{instance.autumnSpraying}} {{#ifCond instance.autumnSpraying '===' '1'}}day{{/ifCond}}{{#ifCond instance.autumnSpraying '!==' '1'}}days{{/ifCond}}{{/ifCond}}</b>
+            </p>
+
+            <p class="plant-edit__last-date">
+                {{#ifCond plant.checkSprayingReminder '===' 'true'}}
+                    {{#ifCond plant.sprayingLastDate '!==' ''}}
+                        The set spraying last date: <b>{{plant.sprayingLastDate}}</b>
+                    {{/ifCond}}
+                {{/ifCond}}
+            </p>
+            <p class="plant-edit__interval">
+                {{#ifCond plant.checkSprayingReminder '===' 'true'}}
+                    {{#ifCond plant.sprayingRange '!==' ''}}
+                        The set spraying interval {{#ifCond plant.sprayingRange '===' '1'}}is {{/ifCond}}{{#ifCond plant.sprayingRange '!==' '1'}}are {{/ifCond}}<b>{{plant.sprayingRange}} {{#ifCond plant.sprayingRange '===' '1'}}day {{/ifCond}}{{#ifCond plant.sprayingRange '!==' '1'}}days {{/ifCond}}</b>
+                    {{/ifCond}}
+                {{/ifCond}}
+            </p>
+
+            <div class="plant-edit__spraying-container{{#ifCond plant.checkSprayingReminder '===' 'false'}} hidden{{/ifCond}}">
+                <div class="plant-edit__spraying-userdata">
+                    <div>
+                        <p>Set spraying last date:</p>
+                        <input class="date" type="date" name="sprayingLastDate" value="">
+                    </div>
+                    <div>
+                        <p>Set spraying interval (in days):</p>
+                        <input class="range" type="text" name="sprayingRange" value="">
+                    </div>
+                </div>
+                <div>
+                    <label><input class="radio" type="radio" name="reminder" {{#ifCond plant.checkSprayingReminder '===' 'true'}}disabled{{/ifCond}}>Set the reminder</label>
+                    <label><input class="radio" type="radio" name="reminder" {{#ifCond plant.checkSprayingReminder '===' 'false'}}disabled{{/ifCond}}>Remove the reminder</label>
+                </div>
+                <div>
+                    <span class="plant-edit__spraying-saved hidden">Spraying settings successfully saved</span>
+                    <button class="plant-edit__spraying-btn-save button" disabled>Save</button>
+                </div>
+           </div>
+        </div>
+
+        <div class="plant-edit__nutrition">
+            <div class="plant-edit__nutrition-set">
+                <i class="icon icon-bottle-droplet"></i>
+                <p>Nutrition reminder</p>
+                <span {{#ifCond plant.checkNutritionReminder '===' 'true'}}class="done"{{/ifCond}}>
+                    {{#ifCond plant.checkNutritionReminder '===' 'true'}}Reminder is set{{/ifCond}}
+                    {{#ifCond plant.checkNutritionReminder '===' 'false'}}Reminder is not set{{/ifCond}}
+                </span>
+            </div>
+                <p class="plant-edit__short-info">
+                    {{instance.fertilizerInfo}}
+                </p>
+                <p>Given fertilizing interval
+                    {{#ifCond currentDate.season '===' 'winter'}}<b>in winter </b>{{#ifCond instance.winterNutrition '===' '1'}}is {{/ifCond}}{{#ifCond instance.winterNutrition '!==' '1'}}are {{/ifCond}}<b>{{instance.winterNutrition}} {{#ifCond instance.winterNutrition '===' '1'}}day{{/ifCond}}{{#ifCond instance.winterNutrition '!==' '1'}}days{{/ifCond}}{{/ifCond}}</b>
+                    {{#ifCond currentDate.season '===' 'spring'}}<b>in spring </b>{{#ifCond instance.springNutrition '===' '1'}}is {{/ifCond}}{{#ifCond instance.springNutrition '!==' '1'}}are {{/ifCond}}<b>{{instance.springNutrition}} {{#ifCond instance.springNutrition '===' '1'}}day{{/ifCond}}{{#ifCond instance.springNutrition '!==' '1'}}days{{/ifCond}}{{/ifCond}}</b>
+                    {{#ifCond currentDate.season '===' 'summer'}}<b>in summer </b>{{#ifCond instance.summerNutrition '===' '1'}}is {{/ifCond}}{{#ifCond instance.summerNutrition '!==' '1'}}are {{/ifCond}}<b>{{instance.summerNutrition}} {{#ifCond instance.summerNutrition '===' '1'}}day{{/ifCond}}{{#ifCond instance.summerNutrition '!==' '1'}}days{{/ifCond}}{{/ifCond}}</b>
+                    {{#ifCond currentDate.season '===' 'autumn'}}<b>in autumn </b>{{#ifCond instance.autumnNutrition '===' '1'}}is {{/ifCond}}{{#ifCond instance.autumnNutrition '!==' '1'}}are {{/ifCond}}<b>{{instance.autumnNutrition}} {{#ifCond instance.autumnNutrition '===' '1'}}day{{/ifCond}}{{#ifCond instance.autumnNutrition '!==' '1'}}days{{/ifCond}}{{/ifCond}}</b>
+                </p>
+
+                <p class="plant-edit__last-date">
+                    {{#ifCond plant.checkNutritionReminder '===' 'true'}}
+                        {{#ifCond plant.nutritionLastDate '!==' ''}}
+                            The set fertilizing last date: <b>{{plant.nutritionLastDate}}</b>
+                        {{/ifCond}}
+                    {{/ifCond}}
+                </p>
+                <p class="plant-edit__interval">
+                    {{#ifCond plant.checkNutritionReminder '===' 'true'}}
+                        {{#ifCond plant.nutritionRange '!==' ''}}
+                            The set fertilizing interval {{#ifCond plant.nutritionRange '===' '1'}}is {{/ifCond}}{{#ifCond plant.nutritionRange '!==' '1'}}are {{/ifCond}}<b>{{plant.nutritionRange}} {{#ifCond plant.nutritionRange '===' '1'}}day {{/ifCond}}{{#ifCond plant.nutritionRange '!==' '1'}}days {{/ifCond}}</b>
+                        {{/ifCond}}
+                    {{/ifCond}}
+                </p>
+
+            <div class="plant-edit__nutrition-container{{#ifCond plant.checkNutritionReminder '===' 'false'}} hidden{{/ifCond}}">
+                <div class="plant-edit__nutrition-userdata">
+                    <div>
+                        <p>Set fertilizing last date:</p>
+                        <input class="date" type="date" name="nutritionLastDate" value="">
+                    </div>
+                    <div>
+                        <p>Set fertilizing interval (in days):</p>
+                        <input class="range" type="text" name="nutritionRange" value="">
+                    </div>
+                </div>
+                <div>
+                    <label><input class="radio" type="radio" name="reminder" {{#ifCond plant.checkNutritionReminder '===' 'true'}}disabled{{/ifCond}}>Set the reminder</label>
+                    <label><input class="radio" type="radio" name="reminder" {{#ifCond plant.checkNutritionReminder '===' 'false'}}disabled{{/ifCond}}>Remove the reminder</label>
+                </div>
+                <div>
+                    <span class="plant-edit__nutrition-saved hidden">Nutrition settings successfully saved</span>
+                    <button class="plant-edit__nutrition-btn-save button" disabled>Save</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

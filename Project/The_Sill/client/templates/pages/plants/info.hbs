@@ -1,0 +1,194 @@
+<h1 class="page-title">Plant Info</h1>
+
+<div class="plant-info">
+    <div class="plant-info__common">
+        <img class="plant-info__photo anim-item anim-hide" src="../../../images/instances/{{plant.photoTitle}}" alt="">
+        <div class="plant-info__names-wrapper anim-item anim-hide">
+            <div class="plant-info__names">
+                <p>
+                    <b>{{plant.commonName}}</b>
+                    <span>(Common Plant Name)</span>
+                </p>
+                <p>
+                    <b>{{plant.botanicalName}}</b>
+                    <span>(Botanical Plant Name)</span>
+                </p>
+                <p>
+                    <b>Plant Name: </b>
+                    <span>{{plant.name}}</span>
+                </p>
+                <p>
+                    <b>Plant Description:</b>
+                    <span>{{plant.description}}</span>
+                </p>
+            </div>
+
+            <div class="plant-info__buttons">
+                {{#ifCond plant.status '!==' 'Done'}}
+                    <a class="plant-info__btn-edit button" href="#/plant/{{plant.id}}/edit">Edit</a>
+                {{/ifCond}}
+
+                <a class="plant-info__btn-back button" href="#/plants">Plants List</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="plant-info__care">
+        <div class="plant-info__features info">
+            <div>
+                <div class="plant-info__text-item anim-item">
+                    <h2>FEATURES</h2>
+                    <p class="anim-show">{{instance.features}}</p>
+                </div>
+            </div>
+            <div>
+                <p>........................</p>
+            </div>
+            <div>
+                <div class="plant-info__image-item anim-item">
+                    <img class="plant-info__features-photo" src="../../../images/info/{{instance.featuresPhoto}}" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="plant-info__lighting info">
+            <div>
+                <div class="plant-info__image-item anim-item">
+                    <img class="plant-info__lighting-photo" src="../../../images/info/{{instance.lightingPhoto}}" alt="">
+                </div>
+            </div>
+            <div>
+                <p>........................</p>
+            </div>
+            <div>
+                <div class="plant-info__text-item anim-item">
+                    <h2>LIGHTENING</h2>
+                    <p class="anim-show">{{instance.illumination}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="plant-info__temperature info">
+            <div>
+                <div class="plant-info__text-item anim-item">
+                    <h2>TEMPERATURE</h2>
+                    <p class="anim-show">{{instance.temperature}}</p>
+                </div>
+            </div>
+            <div>
+                <p>........................</p>
+            </div>
+            <div class="plant-info__image-item anim-item">
+                <img class="plant-info__temperature-photo" src="../../../images/info/{{instance.temperaturePhoto}}" alt="">
+            </div>
+        </div>
+
+        <div class="plant-info__watering info">
+            <div class="plant-info__image-item anim-item">
+                <img class="plant-info__watering-photo" src="../../../images/info/{{instance.wateringPhoto}}" alt="">
+            </div>
+            <div>
+                <p>........................</p>
+            </div>
+            <div>
+                <div class="plant-info__text-item anim-item">
+                    <h2>WATERING</h2>
+                    <p class="anim-show">{{instance.watering}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="plant-info__humidity info">
+            <div>
+                <div class="plant-info__text-item anim-item">
+                    <h2>HUMIDITY</h2>
+                    <p class="anim-show">{{instance.humidity}}</p>
+                </div>
+            </div>
+            <div>
+                <p>........................</p>
+            </div>
+            <div class="plant-info__image-item anim-item">
+                <img class="plant-info__humidity-photo" src="../../../images/info/{{instance.humidityPhoto}}" alt="">
+            </div>
+        </div>
+
+        <div class="plant-info__nutrition info">
+            <div class="plant-info__image-item anim-item">
+                <img class="plant-info__nutrition-photo" src="../../../images/info/{{instance.nutritionPhoto}}" alt="">
+            </div>
+            <div>
+                <p>........................</p>
+            </div>
+            <div>
+                <div class="plant-info__text-item anim-item">
+                    <h2>NUTRITION</h2>
+                    <p class="anim-show">{{instance.fertilizer}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="plant-info__replanting info">
+            <div>
+                <div class="plant-info__text-item anim-item">
+                    <h2>REPLANTING</h2>
+                    <p class="anim-show">{{instance.transplant}}</p>
+                </div>
+            </div>
+            <div>
+                <p>........................</p>
+            </div>
+            <div class="plant-info__image-item anim-item">
+                <img class="plant-info__replanting-photo" src="../../../images/info/{{instance.replantingPhoto}}" alt="">
+            </div>
+        </div>
+
+        <div class="plant-info__propagation info">
+            <div class="plant-info__image-item anim-item">
+                <img class="plant-info__propagation-photo" src="../../../images/info/{{instance.propagationPhoto}}" alt="">
+            </div>
+            <div>
+                <p>........................</p>
+            </div>
+            <div>
+                <div class="plant-info__text-item anim-item">
+                    <h2>PROPAGATION</h2>
+                    <p class="anim-show">{{instance.propagation}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="plant-info__pests info">
+            <div>
+                <div class="plant-info__text-item anim-item">
+                    <h2>PROBLEMS</h2>
+                    <p class="anim-show">{{instance.problems}}</p>
+                </div>
+            </div>
+            <div>
+                <p>........................</p>
+            </div>
+            <div class="plant-info__image-item anim-item">
+                <img class="plant-info__pests-photo" src="../../../images/info/{{instance.problemsPhoto}}" alt="">
+            </div>
+        </div>
+
+        <div class="plant-info__rest info">
+            <div class="plant-info__image-item anim-item">
+                <img class="plant-info__rest-photo" src="../../../images/info/{{instance.restPhoto}}" alt="">
+            </div>
+            <div>
+                <p>........................</p>
+            </div>
+            <div>
+                <div class="plant-info__text-item anim-item">
+                    <h2>REST PERIOD</h2>
+                    <p class="anim-show">{{instance.restPeriod}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

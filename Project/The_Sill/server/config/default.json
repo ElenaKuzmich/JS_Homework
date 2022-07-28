@@ -1,0 +1,16 @@
+{
+  "database": {
+    "plants": "./database/plants.json",
+    "users": "./database/users.json",
+    "instances": "./database/instances.json"
+  },
+
+  "routes": {
+    "plants": "./routes/plants.js",
+    "plant": "./routes/plant.js",
+    "users": "./routes/users.js",
+    "user": "./routes/user.js",
+    "instances": "./routes/instances.js",
+    "instance": "./routes/instance.js"
+  }
+}

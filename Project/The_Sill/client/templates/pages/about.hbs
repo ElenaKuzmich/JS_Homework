@@ -1,0 +1,64 @@
+<div class="about">
+    <a class="about__logo-link" href="#/"><img class="about__logo-img" src="../../images/logos/main-logo.svg" alt=""></a>
+    <div class="about__info">
+        <h4>Your personal plant care helper</h4>
+        <p>
+            While having multiple houseplants with different needs can be confusing, simply educating yourself
+            on the proper care, and things to avoid, can simplify your plant care process massively.
+            And, this resource can help you do so.
+        </p>
+    </div>
+    <a class="about__btn-start button {{#ifCond user.error '!==' ''}}hidden{{/ifCond}}" href="#/plants" title="Click here to get started!">
+        Start using
+    </a>
+
+    <a class="about__btn-join button {{#ifCond user.error '===' ''}}hidden{{/ifCond}}" href="#" title="Click here to join!">
+        Join
+    </a>
+    <a class="about__btn-login button {{#ifCond user.error '===' ''}}hidden{{/ifCond}}" href="#" title="Click here to log in!">
+        Log in
+    </a>
+
+    <div class="modal">
+        <div class="modal__container animate">
+            <p class="modal__title">Please fill in this form to create an account</p>
+            <a class="modal__tab-join" href="#" title="Click here to join!">
+                Join
+            </a>
+            <a class="modal__tab-login" href="#" title="Click here to login!">
+                Login
+            </a>
+            <span class="modal__close" title="Close Modal">×</span>
+
+            <form class="modal__registration" novalidate>
+                <label for="user-name"><b>Username</b></label>
+                <input class="modal__username field" type="text" placeholder="e.g. nina91" name="user-name" required>
+
+                <label for="email"><b>Email</b></label>
+                <input class="modal__email field" type="text" placeholder="example@gmail.com" name="email" required>
+
+                <label for="password"><b>Password</b></label>
+                <input class="modal__password field" type="password" placeholder="Enter Password" name="password" required>
+
+                <label for="password-confirmation field"><b>Confirm Password</b></label>
+                <input class="modal__confirm-password field" type="password" placeholder="Confirm Password" name="password-confirmation" required>
+
+                <button type="submit" class="modal__btn-join-submit">Join</button>
+                <button type="button" class="modal__btn-join-cancel">Cancel</button>
+            </form>
+
+            <form class="modal__authentication" novalidate>
+                <label for="user-name"><b>Username</b></label>
+                <input class="modal__username field" type="text" placeholder="e.g. nina91" name="user-name" required>
+
+                <label for="password"><b>Password</b></label>
+                <input class="modal__password field" type="password" placeholder="Enter Password" name="password" required>
+
+                <button type="submit" class="modal__btn-login-submit">Login</button>
+
+                <button type="button" class="modal__btn-login-cancel">Cancel</button>
+                <span class="modal__forgot-password">Forgot <a href="#">password</a>?</span>
+            </form>
+        </div>
+    </div>
+</div>

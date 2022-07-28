@@ -1,0 +1,93 @@
+<div class="plant {{#ifCond plant.status '===' 'Done'}}plant_done{{/ifCond}}" data-id="{{plant.id}}">
+    <div class="plant__features">
+        <div class="plant__icons">
+            {{#ifCond plant.flowering '===' 'true'}}
+                <a href="#/plant/{{plant.id}}"><i class="icon icon-spa" title="Flowering"></i></a>
+            {{/ifCond}}
+
+            {{#ifCond plant.decideous '===' 'true'}}
+                <a href="#/plant/{{plant.id}}"><i class="icon icon-pagelines" title="Decorative deciduous"></i></a>
+            {{/ifCond}}
+
+            {{#ifCond plant.fruitful '===' 'true'}}
+                <a href="#/plant/{{plant.id}}"><i class="icon icon-apple-whole" title="Fruitful"></i></a>
+            {{/ifCond}}
+
+            {{#ifCond plant.forLowLight '===' 'true'}}
+                <a href="#/plant/{{plant.id}}"><i class="icon icon-cloud" title="For Low Light Conditions"></i></a>
+            {{/ifCond}}
+
+            {{#ifCond plant.forHighLight '===' 'true'}}
+                <a href="#/plant/{{plant.id}}"><i class="icon icon-sun" title="For High Light Conditions"></i></a>
+            {{/ifCond}}
+
+            {{#ifCond plant.humidityLoving '===' 'true'}}
+                <a href="#/plant/{{plant.id}}"><i class="icon icon-shower" title="Humidity-Loving"></i></a>
+            {{/ifCond}}
+
+            {{#ifCond plant.droughtTolerant '===' 'true'}}
+                <a href="#/plant/{{plant.id}}"><i class="icon icon-blackberry" title="Drought-Tolerant"></i></a>
+            {{/ifCond}}
+        </div>
+        <input class="plant__check" type="checkbox" disabled>
+    </div>
+
+    <div class="plant__container">
+        <div class="plant__visual">
+            <img class="plant__photo" data-id="{{plant.id}}" src="../../../images/instances/{{plant.photoTitle}}" alt="{{plant.commonName}}" title="{{plant.commonName}}">
+            <div class="plant__reminders">
+                {{#ifCond plant.checkWateringReminder '===' 'false'}}
+                    {{#ifCond plant.checkSprayingReminder '===' 'false'}}
+                        {{#ifCond plant.checkNutritionReminder '===' 'false'}}
+                            {{#ifCond plant.checkReplantingReminder '===' 'false'}}
+                                <a href="#/plant/{{plant.id}}/edit"><p class="plant__reminders-default">Reminders are not set</p></a>
+                            {{/ifCond}}
+                        {{/ifCond}}
+                    {{/ifCond}}
+                {{/ifCond}}
+
+                {{#ifCond plant.checkWateringReminder '===' 'true'}}
+                    {{#ifCond plant.msCurrentDate '>=' plant.msWateringNextDate}}
+                        <button class="plant__watering-btn" data-id="{{plant.id}}" value="watering" title="watering is done"><i class="icon icon-oil-can"></i> watering</button>
+                    {{else}}
+                        <button class="plant__watering-btn" data-id="{{plant.id}}" value="watering" title="watering is done" disabled><i class="icon icon-oil-can"></i> watering</button>
+                    {{/ifCond}}
+                {{/ifCond}}
+
+                {{#ifCond plant.checkSprayingReminder '===' 'true'}}
+                    {{#ifCond plant.msCurrentDate '>=' plant.msSprayingNextDate}}
+                        <button class="plant__spraying-btn" data-id="{{plant.id}}" value="spraying" title="spraying is needed"><i class="icon icon-shower"></i> spraying</button>
+                    {{else}}
+                        <button class="plant__spraying-btn" data-id="{{plant.id}}" value="spraying" title="spraying is done" disabled><i class="icon icon-shower"></i> spraying</button>
+                    {{/ifCond}}
+                {{/ifCond}}
+
+                {{#ifCond plant.checkNutritionReminder '===' 'true'}}
+                    {{#ifCond plant.msCurrentDate '>=' plant.msNutritionNextDate}}
+                        <button class="plant__nutrition-btn" data-id="{{plant.id}}" value="nutrition" title="fertilizer is needed"><i class="icon icon-bottle-droplet"></i> nutrition</button>
+                    {{else}}
+                        <button class="plant__nutrition-btn" data-id="{{plant.id}}" value="nutrition" title="fertilizer is done" disabled><i class="icon icon-bottle-droplet"></i> nutrition</button>
+                    {{/ifCond}}
+                {{/ifCond}}
+
+                {{#ifCond plant.checkReplantingReminder '===' 'true'}}
+                    {{#ifCond plant.msCurrentDate '>=' plant.msReplantingNextDate}}
+                        <button class="plant__replanting" data-id="{{plant.id}}" value="replanting" title="transfer is needed"><i class="icon icon-seedling"></i> replanting</button>
+                    {{else}}
+                        <button class="plant__replanting" data-id="{{plant.id}}" value="replanting" title="transfer is done" disabled><i class="icon icon-seedling"></i> replanting</button>
+                    {{/ifCond}}
+                {{/ifCond}}
+            </div>
+        </div>
+        <div class="plant__data">
+            <a class="plant__common-name" data-id="{{plant.id}}">{{plant.commonName}}</a>
+            {{#ifCond plant.name '!==' 'No Name'}}<a class="plant__name" data-id="{{plant.id}}">{{plant.name}}</a>{{/ifCond}}
+            {{#ifCond plant.description '!==' 'No Description'}}<a class="plant__description" data-id="{{plant.id}}">{{plant.description}}</a>{{/ifCond}}
+        </div>
+        <div class="plant__buttons">
+            <a class="plant__btn-info button" href="#/plant/{{plant.id}}">Info</a>
+            <a class="plant__btn-edit button" href="#/plant/{{plant.id}}/edit">Edit</a>
+            <a class="plant__btn-remove button">Remove</a>
+        </div>
+    </div>
+</div>

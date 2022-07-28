@@ -1,0 +1,42 @@
+<h1 class="page-title">Plants List</h1>
+
+<div class="plant-add">
+    <img class="plant-add__photo" src="../../../images/previews/plants-preview.jpg" alt="">
+
+    <div class="plant-add__creation">
+        <div class="plant-add__select-container">
+            <input class="plant-add__select" type="text" placeholder="Select plant *">
+            <ul class="plant-add__collection hidden">
+                {{#each instances}}
+                    <li class="plant-add__instance active">{{this.commonName}}</li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <input class="plant-add__name" type="text" placeholder="Add plant private name">
+        <textarea class="plant-add__description" placeholder="Add plant description"></textarea>
+
+        <button class="plant-add__btn-add button" disabled>Add Plant</button>
+        <p class="plant-add__added hidden">Plant added successfully</p>
+    </div>
+</div>
+
+<div class="plants">
+    <div class="plants__additional">
+        <p class="plants__counter"></p>
+        <div>
+        <button class="plants__btn-select button" {{#unless plants.length}}disabled{{/unless}}>
+            Select Plants
+        </button>
+        <button class="plants__btn-clear button" {{#unless plants.length}}disabled{{/unless}}>
+            Clear Plants List
+        </button>
+        </div>
+    </div>
+
+    <div class="plants__list">
+        {{#each plants}}
+            {{> plant plant=this}}
+        {{/each}}
+    </div>
+</div>
